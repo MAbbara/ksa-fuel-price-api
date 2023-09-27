@@ -1,5 +1,4 @@
 # KSA Fuel Price API
-Description like this?
 > or like this?
 
 - [KSA Fuel Price API](#ksa-fuel-price-api)
@@ -7,6 +6,7 @@ Description like this?
   - [Documentation](#documentation)
   - [Examples](#examples)
       - [Python](#python)
+      - [Sample response](#sample-response)
 
 ## Introduction
 some intro text here?
@@ -15,7 +15,7 @@ some intro text here?
 
 Parameter | Description | Options
 ----------|----------------------------|-----------------------------------------------------------------
-fuelType  | Fuel type to get price of. | Gasoline 91, Gasoline 95, Diesel, Kerosene, LPG
+fuelType  | Fuel type to fetch price of. | Gasoline 91, Gasoline 95, Diesel, Kerosene, LPG
 
 ## Examples
 
@@ -23,7 +23,7 @@ fuelType  | Fuel type to get price of. | Gasoline 91, Gasoline 95, Diesel, Keros
 ```py
 import requests
 
-url = "https://abbara.dev/gasPriceApi/api.php"
+url = "https://fuel.abbara.dev/"
 
 params = {"fuelType": "gasoline 95"}
 
@@ -31,4 +31,12 @@ response = requests.request("GET", url, params=params)
 
 print(response.text)
 
+```
+#### Sample response
+```json
+{
+    "type": "gasoline 95",
+    "price": 2.33,
+    "lastUpdated": "2023-09-27 17:14:36"
+}
 ```
